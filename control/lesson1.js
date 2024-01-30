@@ -10,3 +10,12 @@ const vishal = (req, res) => { // get function is like any other function such a
     vishal,
     hayli
   };
+
+  //(req, res) => { 
+    //res.send("Hayli Vaid"); } THIS PART IS CONTROLLER
+
+
+  // We could write it as a function .... const controller = (req, res) => {res.send("Hayli Vaid"); } 
+
+
+ 

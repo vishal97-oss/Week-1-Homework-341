@@ -1,0 +1,29 @@
+{
+    "contacts1":{
+    "first name": "VIN",
+    "last name": "Vaid",
+    "cell phone": "8086991605",
+    "email": "vai19004@bui.edu",
+    "countrynationality": "India",
+    "occupation": "student"
+    },
+
+    "contacts2":{
+        "first name": "Hayli",
+        "last name": "Sanders",
+        "cell phone": "123456789",
+        "email": "Haylisanders@bui.edu",
+        "countrynationality": "USA",
+        "occupation": "student"
+    },
+
+    "contacts3":{
+        "first name": "Erick",
+        "last name": "Birch",
+        "cell phone": "987456321",
+        "email": "Erickbirch@bui.edu",
+        "countrynationality": "USA",
+        "occupation": "student"
+        }
+
+}

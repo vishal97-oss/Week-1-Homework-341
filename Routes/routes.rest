@@ -1,0 +1,7 @@
+// LOCAL HOST
+###
+GET http://localhost:8888/contacts
+
+GET http://localhost:3000
+
+GET http://localhost:8080

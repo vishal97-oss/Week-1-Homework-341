@@ -48,5 +48,5 @@ mongodb.initDb((err, mongodb) => {
     app.listen(process.env.PORT || port);
     console.log(`Connected to DB and listening on ${port}`);
   }
-  const port2 = 8080;
+  //const port2 = 8080;
 });

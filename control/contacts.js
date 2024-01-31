@@ -22,4 +22,22 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-module.exports = { getAll, getSingle };
+const createContact = async(req,res) =>{
+    const contact = {
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      cellphone: req.body.cellphone,
+      occupation: req.body.occupation,
+      countrynationality: req.body.countrynationality,
+      email: req.body.countrynationality,
+    };
+
+    const response = await mongodb.getDb().db('wee2').collection('contacts').insertOne(contact);
+    
+    if (response.acknowledged) {
+      res.status(201).json(response);
+    } else {
+      res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+    }
+}
+module.exports = { getAll, getSingle, createContact };

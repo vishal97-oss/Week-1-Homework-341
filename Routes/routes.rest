@@ -1,7 +1,29 @@
 // LOCAL HOST
 ###
-GET http://localhost:8888/contacts
+//GET http://localhost:3000/contacts
 
-GET http://localhost:3000
 
-GET http://localhost:8080
+  POST http://localhost:3000/contacts HTTP/1.1
+  content-type: application/json
+
+  {
+      "firstname": "Ann",
+      "lastname": "Anderson",
+      "cellphone": "987456321",
+      "email": "Erickbirch@bui.edu",
+      "countrynationality": "USA",
+      "occupation": "student"
+  }
+###
+PUT http://localhost:3000/contacts/65bab901e750674557133801 HTTP/1.1
+content-type: application/json
+
+ {
+
+ "firstname": "Bani", 
+ "lastname": "Vaid"
+
+ }
+
+//DELETE http://localhost:3000/contacts/65baad08758877320682f2f1 HTTP/1.1
+

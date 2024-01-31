@@ -14,6 +14,8 @@ routes.get('/contacts', contactController.getAll);
 
 routes.get('/contacts/:id', contactController.getSingle )
 
+routes.post('/', contactController.createContact)
+
 module.exports = routes;
 
 //routes.get('/Hayli', lesson1.hayli); This part is ROUTES

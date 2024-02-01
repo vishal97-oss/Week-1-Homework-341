@@ -40,4 +40,41 @@ const createContact = async(req,res) =>{
       res.status(500).json(response.error || 'Some error occurred while creating the contact.');
     }
 }
-module.exports = { getAll, getSingle, createContact };
+
+
+const updateContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const contact = {
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    cellphone: req.body.cellphone,
+    occupation: req.body.occupation,
+    countrynationality: req.body.countrynationality,
+    email: req.body.countrynationality,
+  };
+  const response = await mongodb
+    .getDb()
+    .db('wee2')
+    .collection('contacts')
+    .updateOne({ _id: userId }, {$set: req.body});  //.replaceOne replace entire thing or contact alone without $set: replace entire thing///// Now req.body is an object created and when we pass it it only take mentioned feilds to update. 
+  console.log(response);
+
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Error to update.');
+  }
+};
+
+const deleteContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const response = await mongodb.getDb().db('wee2').collection('contacts').deleteOne({ _id: userId });
+  console.log(response);
+  if (response.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
+  }
+};
+
+module.exports = { getAll, getSingle, createContact, updateContact, deleteContact };

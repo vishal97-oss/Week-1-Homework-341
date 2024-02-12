@@ -3,29 +3,30 @@
 GET http://localhost:3000/contacts
 
 ###
-
+GET http://localhost:3000/contacts/65aebdcfbe7ae5d29e53586a
+###
 POST http://localhost:3000/contacts HTTP/1.1
 content-type: application/json
 
   {
-      "firstname": "VIN",
-      "lastname": "Anderson",
+      "firstname": "Varsha",
+      "lastname": "Vaid",
       "cellphone": "987456321",
-      "email": "Anderson@bui.edu",
-      "countrynationality": "USA",
+      "email": "Varsha@bui.edu",
+      "countrynationality": "United Kingdom",
       "occupation": "Teacher"
   }
 ###
-PUT http://localhost:3000/contacts/65bab901e750674557133801 HTTP/1.1
+PUT http://localhost:3000/contacts/65bc68464bcdf8ddaf2aeea5 HTTP/1.1
 content-type: application/json
 
  {
 
- "firstname": "Varsha", 
+ "firstname": "Sabrina", 
  "lastname": "Vaid"
 
  }
 
 
 ###########################################
-DELETE http://localhost:3000/contacts/65bb1c9f5a8d560738bb35ce HTTP/1.1
+DELETE http://localhost:3000/contacts/65bc68464bcdf8ddaf2aeea5 HTTP/1.1

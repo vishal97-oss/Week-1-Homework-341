@@ -7,7 +7,7 @@
 
 const express = require('express'); // package import by demanding express which is in the node module
 const app = express(); // creating the app which has all functionality of express package
-
+var cors = require('cors');
 const mongodb = require('./db/connect');
 
 
@@ -31,13 +31,10 @@ const port = 3000;
 // const port2 = process.env.PORT || 8080;
 // const app2 = express();
 const bodyParser = require('body-parser');
-
+app.use(cors());
 app
-  .use(bodyParser.json())
-  .use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    next();
-  });
+  .use(bodyParser.json());
+  
 
 app.use('/', require('./Routes'));
 

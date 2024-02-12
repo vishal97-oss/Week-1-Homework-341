@@ -2,7 +2,7 @@ const routes = require('express').Router();
 const lesson1 = require('../control/lesson1');
 const contactController = require('../control/contacts');
 const mongodb = require('../db/connect');
-const swaggerAutogen = require('swagger-autogen')();
+
 
 
 routes.get('/', lesson1.vishal); // get function is like any other function such as listen, post, put and delete
@@ -20,6 +20,7 @@ routes.post('/contacts', contactController.createContact)
 
 routes.put('/contacts/:id', contactController.updateContact)
 
+routes.use('/', require('./swagger'));
 // routes.use('/api-docs', swaggerUi.serve);
 // routes.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
